@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="page-header container">
+  <h1>Welcome to the Awesome Blog Exercice Ever  !! <br /><small>Enjoy the Magic by AIT SAID Mouaad</small></h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <label class="col-sm-5" for="numberPosts">Tapez le nombre de Posts à generer !!</label>
+    <input class="col-sm-1 " type="number" max="100" min="0" [(ngModel)]="numberPosts" name="numberPosts" (input)="changeNumberPosts()" />
+    <div class="col"></div>
+  </div>
+ <br />
+ <br />
+  
+  <ul class="list-group">
+    <li *ngFor="let p of Posts" [ngClass]="{'list-group-item': true, 'list-group-item-success': p.loveIts>0,'list-group-item-danger': p.loveIts<0}">
+      <app-post [post]="p"></app-post>
+    </li>
+    <hr>
+  </ul>
+</div>
